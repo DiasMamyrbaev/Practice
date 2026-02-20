@@ -1,12 +1,6 @@
 n = int(input())
-a = True
-while n % 2 == 0:
-    n //= 2
-    a = True
-else:
-    a = False
 
-if a:
+if n > 0 and (n & (n - 1)) == 0:
     print("YES")
 else:
     print("NO")
