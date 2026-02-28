@@ -1,18 +1,18 @@
 import sys
 
-def divisible_by_3_and_4(n):
-    for i in range(0, n + 1, 12):
-        yield i ** 2
-
+def powers_of_two(n):
+    for i in range(n+1):
+        yield 2 ** i
+    
 def main():
     n = int(sys.stdin.readline().strip())
-    gen = divisible_by_3_and_4(n)
-    
+    gen = powers_of_two(n)
+
     first = next(gen)
     sys.stdout.write(str(first))
-    
-    for num in gen:
-        sys.stdout.write(' ' + str(num))
+
+    for n in gen:
+        sys.stdout.write(" " + str(n))
 
 if __name__ == "__main__":
     main()
