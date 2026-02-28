@@ -1,0 +1,25 @@
+{
+    "company": "TechCorp",
+    "location": "New York",
+    "employees": [
+        {
+            "id": 1,
+            "name": "Aruzhan Farsh",
+            "position": "Developer",
+            "salary": 750000
+        },
+        {
+            "id": 2,
+            "name": "Nazerke Geradot",
+            "position": "Manager",
+            "salary": 950000
+        },
+        {
+            "id": 3,
+            "name": "Damira Tokan",
+            "position": "Designer",
+            "salary": 650000
+        }
+    ],
+    "departments": ["IT", "HR", "Marketing"]
+}
