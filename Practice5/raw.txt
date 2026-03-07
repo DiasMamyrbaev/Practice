@@ -1,0 +1,8 @@
+Receipt from SuperMart
+Date: 2025-03-15 18:45
+Items:
+Apple       1.50
+Bread       2.00
+Milk        3.25
+Total:      6.75
+Payment:    Credit Card
