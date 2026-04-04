@@ -1,7 +1,7 @@
 import psycopg2
 
 hostname = 'localhost'
-database = 'demo'     
+database = 'template1'     
 username = 'postgres'
 pwd = 'admin'
 port_id = 5432
@@ -21,7 +21,7 @@ try:
     cur = conn.cursor()
     
     sql_script = """
-        CREATE TABLE IF NOT EXISTS contacts (
+        CREATE TABLE IF NOT EXISTS students (
             id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             phone VARCHAR(50) NOT NULL
@@ -29,7 +29,10 @@ try:
     """
     
     cur.execute(sql_script)
-    
+    cur.execute("UPDATE contacts SET name = %s WHERE id = %s", (new_name, new_id))
+    cur.execute("DELETE FROM students WHERE name = %s", (value,))
+    cur.execute("SELECT * FROM contacts WHERE name ILIKE %s", (f"{value}%",))
+    cur.execute("INSET INTO contacts (name,phone) VALUES (%s,%s)"(row['name'],row['phone']))
     conn.commit()
     print("Таблица 'contacts' создана!")
 

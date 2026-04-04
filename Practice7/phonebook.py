@@ -91,12 +91,12 @@ def get_contacts(filter_by=None, value=None):
                     cur.execute("SELECT * FROM contacts ORDER BY id")
                 
                 rows = cur.fetchall()
-                print("\n--- Список контактов ---")
+                print("\n Список контактов ")
                 if not rows:
                     print("Пусто.")
                 for row in rows:
                     print(f"ID: {row[0]} | Имя: {row[1]} | Телефон: {row[2]}")
-                print("------------------------\n")
+                print("\n")
         finally:
             conn.close()
 
@@ -110,7 +110,7 @@ def delete_contact(delete_by, value):
                 elif delete_by == 'phone':
                     cur.execute("DELETE FROM contacts WHERE phone = %s", (value,))
             conn.commit()
-            print(f"Контакт с {delete_by} = {value} удален (если он существовал).")
+            print(f"Контакт с {delete_by} = {value} удален.")
         finally:
             conn.close()
 
@@ -120,9 +120,9 @@ def main_menu():
     while True:
         print("\n ТЕЛЕФОННАЯ КНИГА ")
         print("1. Импортировать данные из CSV")
-        print("2. Добавить контакт (вручную)")
+        print("2. Добавить контакт")
         print("3. Обновить контакт")
-        print("4. Найти/Показать контакты")
+        print("4. Найти или показать контакты")
         print("5. Удалить контакт")
         print("0. Выход")
         
@@ -140,8 +140,8 @@ def main_menu():
             get_contacts()
             try:
                 c_id = int(input("Введите ID контакта для обновления: "))
-                n_name = input("Введите новое имя (или нажмите Enter, чтобы пропустить): ")
-                n_phone = input("Введите новый телефон (или нажмите Enter, чтобы пропустить): ")
+                n_name = input("Введите новое имя (или Enter, чтобы пропустить): ")
+                n_phone = input("Введите новый телефон (или Enter, чтобы пропустить): ")
                 update_contact(c_id, n_name if n_name else None, n_phone if n_phone else None)
             except ValueError:
                 print("ID должен быть числом.")
