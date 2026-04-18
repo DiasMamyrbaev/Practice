@@ -3,6 +3,28 @@ import os
 import csv
 
 
+def create_tables():
+    commands = """
+    CREATE TABLE IF NOT EXISTS Contacts (
+        id INT PRIMARY KEY,
+        names TEXT NOT NULL,
+        phone TEXT
+    );
+    """
+    conn = connect()
+    if conn is not None:
+        try:
+            cur = conn.cursor()
+            cur.execute(commands)
+            conn.commit()
+            cur.close()
+            print("Table 'Contacts' is ready, bro.")
+        except Exception as e:
+            print(f"Error creating table: {e}")
+        finally:
+            conn.close()
+
+
 
 def Search_contacts():
     conn = connect()
@@ -148,7 +170,7 @@ def Import_csv(filename="new_contacts.csv"):
     full_path = os.path.join(current_dir, filename)
 
     conn = connect()
-    
+
     if conn:
         try:
             with open(full_path, mode="r", encoding="utf-8") as f:
@@ -169,6 +191,9 @@ def Import_csv(filename="new_contacts.csv"):
 
 
 if __name__ == "__main__":
+    
+    create_tables()
+
     while True:
         print("1.Search Contacts")
         print("2.Import data from CSV")
