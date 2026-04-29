@@ -13,7 +13,6 @@ screen = pygame.display.set_mode((RES, RES))
 pygame.display.set_caption("Boozer Snake")
 clock = pygame.time.Clock()
 
-
 font_score = pygame.font.SysFont('Arial', 26, bold=True)
 font_end = pygame.font.SysFont('Arial', 66, bold=True)
 
@@ -21,6 +20,7 @@ COLOR_GREEN = pygame.Color('green')
 COLOR_RED = pygame.Color('red')
 COLOR_ORANGE = pygame.Color('orange')
 COLOR_BLACK = pygame.Color('black')
+COLOR_GOLD = pygame.Color('gold')
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(BASE_DIR, '1.jpg')
@@ -28,12 +28,10 @@ bg_image = None
 if os.path.exists(image_path):
     bg_image = pygame.image.load(image_path).convert()
 
-
 snake_body = [(400, 400), (350, 400), (300, 400)]
 dx, dy = SIZE, 0
 score = 0
 level = 1
-
 
 direction_changed = False
 
@@ -44,9 +42,15 @@ def generate_food(snake):
         if (x, y) not in snake:
             return x, y
 
+
 food_x, food_y = generate_food(snake_body)
+food_weight = random.choices([1, 3], weights=[80, 20])[0]
+food_spawn_time = pygame.time.get_ticks()
+FOOD_LIFETIME = 6000
 
 while True:
+    current_time = pygame.time.get_ticks()
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -67,17 +71,20 @@ while True:
                 direction_changed = True
 
 
+    if current_time - food_spawn_time > FOOD_LIFETIME:
+        food_x, food_y = generate_food(snake_body)
+        food_weight = random.choices([1, 3], weights=[80, 20])[0]
+        food_spawn_time = current_time
+
     head_x, head_y = snake_body[0]
     new_head = (head_x + dx, head_y + dy)
     
     direction_changed = False 
 
-
     if (new_head[0] < 0 or new_head[0] >= RES or 
         new_head[1] < 0 or new_head[1] >= RES or 
         new_head in snake_body):
         
-
         if bg_image:
             screen.blit(bg_image, (0, 0))
         else:
@@ -92,26 +99,31 @@ while True:
         pygame.quit()
         sys.exit()
 
-
     snake_body.insert(0, new_head)
 
 
     if new_head[0] == food_x and new_head[1] == food_y:
-        score += 1
+        score += food_weight
         food_x, food_y = generate_food(snake_body)
-        if score % 3 == 0:
-            level += 1
+        food_weight = random.choices([1, 3], weights=[80, 20])[0]
+        food_spawn_time = pygame.time.get_ticks()
+        
+
+        new_level = 1 + score // 3
+        if new_level > level:
+            level = new_level
             FPS += 5 
     else:
         snake_body.pop()
-
 
     if bg_image:
         screen.blit(bg_image, (0, 0))
     else:
         screen.fill(COLOR_BLACK)
         
-    pygame.draw.rect(screen, COLOR_RED, (food_x, food_y, SIZE, SIZE))
+
+    current_food_color = COLOR_GOLD if food_weight > 1 else COLOR_RED
+    pygame.draw.rect(screen, current_food_color, (food_x, food_y, SIZE, SIZE))
     
     for block in snake_body:
         pygame.draw.rect(screen, COLOR_GREEN, (block[0], block[1], SIZE - 1, SIZE - 1))
@@ -121,3 +133,4 @@ while True:
 
     pygame.display.flip()
     clock.tick(FPS)
+    
