@@ -1,0 +1,178 @@
+[
+    {
+        "id": 1,
+        "name": "Dias Mamyrbaev",
+        "email": "dias@superapp.kz",
+        "birthday": "2008-05-10",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "87010001122",
+                "type": "mobile"
+            },
+            {
+                "phone": "87010001122",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sanzhar",
+        "email": "sanzha.r@gmail.com",
+        "birthday": "2007-08-21",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "87051234567",
+                "type": "mobile"
+            },
+            {
+                "phone": "87051234567",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Musabekov N.R.",
+        "email": "instructor@university.kz",
+        "birthday": "1985-02-14",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "87272345678",
+                "type": "work"
+            },
+            {
+                "phone": "87272345678",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Mickey Mouse",
+        "email": "mickey@disney.com",
+        "birthday": "1928-11-18",
+        "group": "Family",
+        "phones": [
+            {
+                "phone": "87779998877",
+                "type": "home"
+            },
+            {
+                "phone": "87779998877",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Alan Turing",
+        "email": "alan.t@enigma.org",
+        "birthday": "1912-06-23",
+        "group": "Other",
+        "phones": [
+            {
+                "phone": "87000000000",
+                "type": "mobile"
+            },
+            {
+                "phone": "87000000000",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Coach Aidar",
+        "email": "aidar.coach@superapp.kz",
+        "birthday": "1990-09-15",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "87071112233",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "1Fit Support",
+        "email": "help@1fit.app",
+        "birthday": "2018-01-01",
+        "group": "Other",
+        "phones": [
+            {
+                "phone": "87273334455",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Nikola Tesla",
+        "email": "tesla@electricity.com",
+        "birthday": "1856-07-10",
+        "group": "Other",
+        "phones": [
+            {
+                "phone": "87770001122",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Arman (KazGASA)",
+        "email": "arman.k@mail.ru",
+        "birthday": "2007-12-05",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "87089998877",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Snake Player One",
+        "email": "top.scorer@snake.kz",
+        "birthday": "2005-03-30",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "87015556677",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Python Documentation",
+        "email": "docs@python.org",
+        "birthday": "1991-02-20",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "87000000001",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Database Admin",
+        "email": "admin@postgres.kz",
+        "birthday": "1996-07-08",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "87279990000",
+                "type": "home"
+            }
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+id,names,email,birthday,group,phone,type
+1,Dias Mamyrbaev,dias@superapp.kz,2008-05-10,Work,87010001122,mobile
+2,Sanzhar,sanzha.r@gmail.com,2007-08-21,Friend,87051234567,mobile
+3,Musabekov N.R.,instructor@university.kz,1985-02-14,Work,87272345678,work
+4,Mickey Mouse,mickey@disney.com,1928-11-18,Family,87779998877,home
+5,Alan Turing,alan.t@enigma.org,1912-06-23,Other,87000000000,mobile
+6,Coach Aidar,aidar.coach@superapp.kz,1990-09-15,Work,87071112233,mobile
+7,1Fit Support,help@1fit.app,2018-01-01,Other,87273334455,work
+8,Nikola Tesla,tesla@electricity.com,1856-07-10,Other,87770001122,home
+9,Arman (KazGASA),arman.k@mail.ru,2007-12-05,Friend,87089998877,mobile
+10,Snake Player One,top.scorer@snake.kz,2005-03-30,Friend,87015556677,mobile
+11,Python Documentation,docs@python.org,1991-02-20,Work,87000000001,work
+12,Database Admin,admin@postgres.kz,1996-07-08,Work,87279990000,home

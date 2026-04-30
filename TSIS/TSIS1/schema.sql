@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS phones CASCADE;
+DROP TABLE IF EXISTS contacts CASCADE;
+DROP TABLE IF EXISTS groups CASCADE;
+
+
+CREATE TABLE groups (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+
+CREATE TABLE contacts (
+    id INT PRIMARY KEY,
+    names TEXT NOT NULL,
+    email VARCHAR(100),
+    birthday DATE,
+    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    group_id INTEGER REFERENCES groups(id) ON DELETE SET NULL
+);
+
+
+CREATE TABLE phones (
+    id SERIAL PRIMARY KEY,
+    contact_id INTEGER REFERENCES contacts(id) ON DELETE CASCADE,
+    phone VARCHAR(20) NOT NULL,
+    type VARCHAR(10) CHECK (type IN ('home', 'work', 'mobile'))
+);
